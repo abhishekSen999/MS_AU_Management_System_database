@@ -74,6 +74,7 @@ select * from hiring_manager where lower(name) = "manager1";
 
 select * from hiring_manager where lower(email) = "email1@gmail.com";
 
+select * from hiring_manager where lower(email) = "email1@gmail.com";
 
 
 
