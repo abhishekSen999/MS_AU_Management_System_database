@@ -231,15 +231,16 @@ ENGINE = InnoDB;
 DROP TABLE IF EXISTS `AUProject`.`Onboard` ;
 
 CREATE TABLE IF NOT EXISTS `AUProject`.`Onboard` (
-  `onb_id` INT UNSIGNED NOT NULL AUTO_INCREMENT,
+  `onb_id` INT UNSIGNED NOT NULL auto_increment,
   `emp_id` INT UNSIGNED NOT NULL,
   `dem_id` INT UNSIGNED NOT NULL,
   `start_date` DATETIME NOT NULL,
   `eta_of_Completion` DATETIME NOT NULL,
   `onboarding_status` VARCHAR(45) NOT NULL,
-  `BGC_status` VARCHAR(45) NOT NULL,
-  INDEX `dem_id_idx` (`dem_id` ASC) VISIBLE,
+  `bgc_status` VARCHAR(45) NOT NULL,
+  INDEX `dem_id_idx` (`dem_id` ASC) INVISIBLE,
   PRIMARY KEY (`onb_id`),
+  UNIQUE INDEX `emp_id_dem_id_composit_idx` (`emp_id` ASC, `dem_id` ASC) INVISIBLE,
   CONSTRAINT `emp_id`
     FOREIGN KEY (`emp_id`)
     REFERENCES `AUProject`.`Employee` (`emp_id`)
@@ -270,6 +271,24 @@ CREATE TABLE IF NOT EXISTS `AUProject`.`Hiring_manager` (
   UNIQUE INDEX `email_UNIQUE` (`email` ASC) VISIBLE)
   
 ENGINE = InnoDB;
+
+DROP TABLE IF EXISTS `AUProject`.`Onboard_Log` ;
+
+CREATE TABLE IF NOT EXISTS `AUProject`.`Onboard_Log` (
+  `log_id` BIGINT UNSIGNED NOT NULL auto_increment,
+  `timestamp` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `operator` VARCHAR(45) NOT NULL,
+  `operation` VARCHAR(45) NOT NULL,
+  `onb_id` INT UNSIGNED NOT NULL,
+  `emp_id` INT UNSIGNED NULL,
+  `dem_id` INT UNSIGNED NULL,
+  `start_date` DATETIME NULL,
+  `eta_of_completion` DATETIME NULL,
+  `onboarding_status` VARCHAR(45) NULL,
+  `bgc_status` VARCHAR(45) NULL,
+  PRIMARY KEY (`log_id`))
+ENGINE = InnoDB;
+
 
 
 SET SQL_MODE=@OLD_SQL_MODE;

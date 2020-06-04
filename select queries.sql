@@ -77,6 +77,85 @@ select * from hiring_manager where lower(email) = "email1@gmail.com";
 select * from hiring_manager where lower(email) = "email1@gmail.com";
 
 
+-- --------------------------------------------------------
+-- project alloation
+-- --------------------------------------------------------
+select * from project_allocation;
+
+select * from project_allocation;
+
+(select emp_id , max(end_date)  as last_end_date
+from project_allocation
+group by emp_id);
+
+
+
+select project_allocation.emp_id, project_allocation.proj_id, project_allocation.start_date, project_allocation.end_date
+from project_allocation
+join(select emp_id , max(end_date)  end_date
+	from project_allocation
+	group by emp_id) as last_project
+on project_allocation.end_date = last_project.end_date
+where project_allocation.emp_id = 1;
+
+
+
+-- get all employee who are free after date
+-- ------------------------------------------
+select employee.emp_id,employee.company_email,employee.location, employee.name , employee.personal_email, last_project.end_date
+from employee
+join (select emp_id , max(end_date)  end_date
+	from project_allocation
+	group by emp_id) as last_project
+on employee.emp_id = last_project.emp_id
+where last_project.end_date <= "2020-03-01"; 
+
+select * from onboard;
+
+select * from demand_skillset;
+select * from project_allocation;
+
+select*from onboard;
+
+select * from onboard where bgc_status like "started";
+
+update onboard set emp_id = 6,dem_id = 2 , start_Date = "2020-06-02" , eta_of_completion = "2020-05-31" , onboarding_status = "waiting-approval" , bgc_status = "started" 
+where onb_id = 2;
+
+delete from onboard where onb_id=3;
+
+select * from Onboard_Log where timestamp between "2020-06-04 16:24:23" and "2020-06-04 17:27:01";
+
+insert into Onboard_Log (operator , operation , onb_id , emp_id , dem_id, start_date , eta_of_completion , onboarding_status , bgc_status)
+	values("test_operator" , "test_operation" , 1 ,1 ,1, "2020-01-02" , "2020-01-02" , "started" , "started");
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

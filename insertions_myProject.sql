@@ -293,7 +293,20 @@ values(3,2,'2020-01-01','2020-02-25');
 insert into project_allocation (emp_id,proj_id,start_date,end_date)
 values(4,3,'2020-01-01','2020-03-30');
 
+insert into project_allocation (emp_id,proj_id,start_date,end_date)
+values(1,2,'2020-06-01','2020-06-30');
+
+insert into project_allocation (emp_id,proj_id,start_date,end_date)
+values(1,3,'2020-07-01','2020-07-30');
+
+insert into project_allocation (emp_id,proj_id,start_date,end_date)
+values(1,4,'2020-01-01','2020-05-30');
+
+
 select* from project_allocation;
+
+
+
 
 
 -- ---------------------------------------------------------
@@ -348,6 +361,18 @@ values (2,4);
 commit
 
  
+select * from onboard;
+-- 
+insert into onboard (emp_id, dem_id, start_date, eta_of_completion, bgc_status ,onboarding_status)
+values ( 5 , 1 , "2020-05-02" , "2020-05-30","started","statred");
+insert into onboard (emp_id, dem_id, start_date, eta_of_completion, bgc_status ,onboarding_status)
+values ( 6 , 2 , "2020-05-02" , "2020-05-30","started","statred");
+insert into onboard (emp_id, dem_id, start_date, eta_of_completion, bgc_status ,onboarding_status)
+values ( 7 , 1 , "2020-05-02" , "2020-05-30","started","statred");
+
+insert into onboard (emp_id, dem_id, start_date, eta_of_completion, bgc_status ,onboarding_status)
+values ( 2 , 1 , "2020-05-02" , "2020-05-30","started","statred");
+
 
 
 
