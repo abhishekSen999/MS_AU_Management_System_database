@@ -124,12 +124,17 @@ where onb_id = 2;
 
 delete from onboard where onb_id=3;
 
-select * from Onboard_Log where timestamp between "2020-06-04 16:24:23" and "2020-06-04 17:27:01";
+select * from Onboard_Log where timestamp between "2020-06-04 16:24:23" and "2020-06-04 16:24:23";
 
 insert into Onboard_Log (operator , operation , onb_id , emp_id , dem_id, start_date , eta_of_completion , onboarding_status , bgc_status)
 	values("test_operator" , "test_operation" , 1 ,1 ,1, "2020-01-02" , "2020-01-02" , "started" , "started");
 
+select * from employee_skillset;
 
+select* from demand;
+
+
+select count(*) from onboard where dem_id = 1;
 
 
 
