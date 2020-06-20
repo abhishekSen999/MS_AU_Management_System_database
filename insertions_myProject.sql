@@ -335,6 +335,29 @@ values("mumbai" , 2, 5,'2020-05-1',2);
 insert into demand (location , experience_requirement , number_people,creation_date,h_id) 
 values("mumbai" , 2, 5,'2020-05-1',2); 
 
+insert into demand (location , experience_requirement , number_people,creation_date,h_id) 
+values("gurgaon" , 2, 5,'2020-05-1',2); 
+
+insert into demand (location , experience_requirement , number_people,creation_date,h_id) 
+values("gurgaon" , 2, 5,'2019-05-1',2); 
+
+insert into demand (location , experience_requirement , number_people,creation_date,h_id) 
+values("bangalore" , 2, 5,'2019-05-1',2); 
+
+insert into demand (location , experience_requirement , number_people,creation_date,h_id) 
+values("bangalore" , 2, 5,'2020-01-01',2); 
+
+insert into demand (location , experience_requirement , number_people,creation_date,h_id) 
+values("bangalore" , 2, 5,'2020-03-01',2); 
+
+
+
+
+
+
+
+
+
 
 -- select * from demand;
 
@@ -358,7 +381,7 @@ insert into demand_skillset (dem_id, skill_id)
 values (2,4);
 
 
-commit
+commit;
 
  
 select * from onboard;
@@ -374,6 +397,12 @@ insert into onboard (emp_id, dem_id, start_date, eta_of_completion, bgc_status ,
 values ( 2 , 1 , "2020-05-02" , "2020-05-30","started","statred");
 
 
+insert into onboard (emp_id, dem_id, start_date, eta_of_completion, bgc_status ,onboarding_status)
+values ( 15 , 1 , "2020-05-02" , "2020-05-30","started","statred");
+
+delete from onboard where onb_id = 56;
+select* from onboard;
+rollback;
 
 
 

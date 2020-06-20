@@ -122,7 +122,9 @@ select * from onboard where bgc_status like "started";
 update onboard set emp_id = 6,dem_id = 2 , start_Date = "2020-06-02" , eta_of_completion = "2020-05-31" , onboarding_status = "waiting-approval" , bgc_status = "started" 
 where onb_id = 2;
 
-delete from onboard where onb_id=3;
+select * from onboard where onb_id=24;
+
+update onboard set emp_id = 3,dem_id = 1 , start_Date = "2222-02-22" , eta_of_completion = "2222-02-22" , onboarding_status = "completed" , bgc_status = "started"  where onb_id = 56;
 
 select * from Onboard_Log where timestamp between "2020-06-04 16:24:23" and "2020-06-04 16:24:23";
 
@@ -131,19 +133,25 @@ insert into Onboard_Log (operator , operation , onb_id , emp_id , dem_id, start_
 
 select * from employee_skillset;
 
+
+
+
+select * from onboard_log;
+commit; 
+
 select* from demand;
 
+select location,count(*) as count from demand group by location;
 
-select count(*) from onboard where dem_id = 1;
-
-
-
-
+select * from onboard where BGC_status like "s%";
+select * from onboard where dem_id=2;
 
 
+select* from onboard_log where onb_id  = 1;
 
+select* from onboard_log where emp_id = 1 and dem_id=1;
 
-
+select * from onboard;
 
 
 
