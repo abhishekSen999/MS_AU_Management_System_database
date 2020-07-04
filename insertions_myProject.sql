@@ -400,9 +400,9 @@ values ( 2 , 1 , "2020-05-02" , "2020-05-30","started","statred");
 insert into onboard (emp_id, dem_id, start_date, eta_of_completion, bgc_status ,onboarding_status)
 values ( 15 , 1 , "2020-05-02" , "2020-05-30","started","statred");
 
-delete from onboard where onb_id = 56;
-select* from onboard;
-rollback;
+-- delete from onboard where onb_id = 56;
+-- select* from onboard;
+-- rollback;
 
 
 

@@ -149,11 +149,12 @@ select * from onboard where dem_id=2;
 
 select* from onboard_log where onb_id  = 1;
 
-select* from onboard_log where emp_id = 1 and dem_id=1;
+select* from onboard;
 
-select * from onboard;
+-- delete from onboard where onb_id = 2;
+update onboard set onb_id = 74 where onb_id = 76;
 
-
+select * from onboard_log where onb_id = 2;
 
 
 
